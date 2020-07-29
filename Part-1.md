@@ -107,8 +107,7 @@ Creating namespaces serve has providing scope to names, and access to resources.
 - We can deploy one or more containers in a pod, and mount volumes to containers within a pod
 
 ## Task 1 (Single Pod)
-- Before begining this task open a text file where you will write down various outputs and commands. Name this file `pod_task.txt`
-- Add the text 'Task 1 Start' at the top of the file
+- Before begining this task download a copy of the `pod_task.md` file.
 
 Your first task is to create a manifest file that has the following properties:
 
@@ -119,11 +118,10 @@ Your first task is to create a manifest file that has the following properties:
    
 - Save this manifest file as `pod_1.yml` in your manifest directory.
 - Use `create` or `apply` the manifest file
-  - Save the command you used to create the pod in the `pod_task.txt` file
+  - Save the command you used to create the pod in the `pod_task.md` file
 - Verify the pod is deployed using the `describe` or `proxy` command
-  - Save the command you used to verify in the `pod_task.txt` file
+  - Save the command you used to verify in the `pod_task.md` file
   - if using the `proxy` command also save the url you used to view the pod.
-- Add the text 'Task 1 End' on a new line at the end
 
 ---
 
@@ -132,7 +130,6 @@ Your first task is to create a manifest file that has the following properties:
 In this task we will be adding a second container to the pod and mounting a volume with content.
 
 - Start by copying the `pod_1.yml` as `pod_2.yml`
-- Add the text 'Task 2 Start' at the end of the `pod_task.txt` file
 
 In the `pod_2.yml`, add an additional pod/volume to the manifest with the following properties:
 
@@ -157,8 +154,7 @@ done
 - Save this manifest file as `pod_2.yml` in your manifest directory.
 - Use `create` or `apply` the manifest file
 - Using `proxy` visit the url for this pod
-- In `pod_task.txt` breifly describe how the containers are working together to display what you see.
-- Add the text 'Task 2 End' on a new line at the end
+- In `pod_task.txt` breifly describe how the containers are working together to display what you see on the browser.
 
 delete the pod using the `kubectl delete` command.
 
@@ -172,8 +168,6 @@ Labels are kv pairs added as meta data to resources that allow for identificatio
 
 In this task we will add some labels to our manifest from Task 2, so copy the `pod_2.yml` as `labels_1.yml`
 
-then,  add the text 'Task 3 Start' on a new line at the end of the `pod_task.txt` file from earlier.
-
 
 1. In the `labels_1.yml` change the name of the pod to `labeled-pod` and `create` or `apply` the resource.
    
@@ -182,13 +176,13 @@ then,  add the text 'Task 3 Start' on a new line at the end of the `pod_task.txt
    - app_name=nginx
    - env=dev 
 3. You can verify the labels were added via `kubectl get pods --show-labels`
-3. In the `pod_task.txt` file - write the command used to add the labels to the pod.
-4. Again using the [kubectl label] command remove these labels. Write the command down in the `pod_task.txt` file.
-5. Add the labels to the `labels_1.yml` and `apply` the changes.
-6. Using the [equality selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#equality-based-requirement) and the [set selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement) run and write down the `kubectl get` commands in the `pod_task.txt` that will do the following -
+4. In the `pod_task.md` file - write the command used to add the labels to the pod.
+5. Again using the [kubectl label] command remove these labels. Write the command down in the `pod_task.md` file.
+6. Add the labels to the `labels_1.yml` and `apply` the changes.
+7. Using the [equality selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#equality-based-requirement) and the [set selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement) run and write down the `kubectl get` commands in the `pod_task.md` that will do the following -
    1. using equality the command to get pods that have app_name=nginx
    2. using set the command to get pods that has app_name=nginx and env != prod
-7. Write 'Task 3 End' in the `pod_task.txt`
+8. 
  
 ### Take note -
 Although it might seem tedious from the command line to use selectors, labels and selectors are heavily used in higher level abstractions in kubernetes. 
@@ -229,7 +223,7 @@ In this task you will create a service using `clusterIP`.
 4. `create` or `apply` the manifest.  
 5. run `kube proxy` and visit the url of the service at  http://127.0.0.1:8001/api/v1/namespaces/dev/services/nginx-service/proxy/ in your browser or using curl
 6. Refresh the browser, or execute curl multiple times
-7. Describe what is happening and what you see in the `pod_tasks.txt` under *Task 4*.
+7. Describe what is happening and what you see in the `pod_tasks.md` (Question 8)
 
 ### notes -
 ClusterIP is the most common way to expose application in kubernetes, and is how pod/services are consumed within kubernetes. Remember that the service is a static IP abd DNS entry that maps to pods.
@@ -244,7 +238,7 @@ In this task we will expose our application using the `NodePort` object. Like be
 3. Similar to Task 4, expose our pods at port `80` using the selector for `app_name=nginx` and `env=dev` with the `nodePort` equal to `32410`
 4. `create` or `apply` the manifest. 
 5.  Run the command `minikube service -n dev nodeport-nginx`
-6.  Under *Task 5* in the `pod_task.txt` desribe the behavior you see, then explain the *how*  and *why* it is different than what we saw in Task 4
+6.  Under Question 9 in the `pod_task.md` desribe the behavior you see, then explain the *how*  and *why* it is different than what we saw in Task 4
 
 ---
 

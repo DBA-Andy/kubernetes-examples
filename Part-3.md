@@ -117,12 +117,28 @@ These are the 3 ways to create `ConfigMaps`, now lets see how we can use them.
 
 ## Task 2 (Using ConfigMaps)
 
-## 1 - As environment variable
+1. Create the following the following `Job` as `cm_job_1.yml`
 
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cm-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: job
+        image: alpine:latest
+        command: ["/bin/sh", "-c"]
+        args: [" TODO "]
+        env: TODO
+      restartPolicy: Never
 
+```
 
-continue to part 3 [TODO link]
-
+1. Update the `cm_job_1.yml` so that it prints the value of  `make` and `model` from one of the `ConfigMap`'s we made in the previous Task.
+2. The output should look like "make: [MAKE] model: [MODEL]"  
 
 
 [pre-lab]: https://github.com/cscc-afarag/kubernetes-lab1/blob/master/pre-lab.md
