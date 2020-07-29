@@ -141,6 +141,13 @@ spec:
 2. The output should look like "make: [MAKE] model: [MODEL]"  
 
 
+## Task 3 (Using Secrets)
+
+see [here](https://kubernetes.io/docs/concepts/configuration/secret/) for help
+
+1. Secrets are similar to `ConfigMap`, create a secret similar to how we made a `ConfigMap` manifest and save this as `secret.yml`
+2. Copy `cm_job_1.yml` and `secret_job_1.yml` and change it to use the secret created instead of the configmap.
+
 [pre-lab]: https://github.com/cscc-afarag/kubernetes-lab1/blob/master/pre-lab.md
 [lab 1]: https://github.com/cscc-afarag/kubernetes-lab1/blob/master/lab1.md
 [create-cm]: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#create-configmaps-from-literal-values
