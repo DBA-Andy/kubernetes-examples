@@ -167,6 +167,17 @@ Once you have applied the manifest:
 - verify using `kubectl get services`
 - run `minikube service frontend --url`
 - Copy and pasete the returned  url in your browser to view the guestbook
-
+- Test the guestbook!
+- Try scaling the deployment
+  - `kubectl scale deployment frontend --replicas=5`
 ___
 
+## cleanup
+
+```
+kubectl delete deployment -l app=redis
+kubectl delete service -l app=redis
+kubectl delete deployment -l app=guestbook
+kubectl delete service -l app=guestbook
+```
+  
