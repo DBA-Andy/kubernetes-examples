@@ -238,13 +238,9 @@ In this task we will expose our application using the `NodePort` object. Like be
 3. Similar to Task 4, expose our pods at port `80` using the selector for `app_name=nginx` and `env=dev` with the `nodePort` equal to `32410`
 4. `create` or `apply` the manifest. 
 5.  Run the command `minikube service -n dev nodeport-nginx`
-6.  Under Question 9 in the `pod_task.md` desribe the behavior you see, then explain the *how*  and *why* it is different than what we saw in Task 4
+6.  Under Question 9 in the `pod_task.md` desribe the behavior you see, then explain the *why* you think it is different than what we saw in Task 4
 
 ---
-
-continue to part 2
-
-
 
 [pre-lab]: https://github.com/cscc-afarag/kubernetes-lab1/blob/master/pre-lab.md
 [lab 1]: https://github.com/cscc-afarag/kubernetes-lab1/blob/master/lab1.md
