@@ -51,7 +51,7 @@ $ kubectl get namespaces
 Create a new namespace - 
 
 ```
-$ kubectcl create namespace dev
+$ kubectl create namespace dev
 ```
 
 
